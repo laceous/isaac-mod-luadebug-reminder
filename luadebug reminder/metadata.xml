@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Luadebug Reminder</name>
+    <directory>luadebug reminder</directory>
+    <id>3076249394</id>
+    <description>Normally, mods live within a sandbox that protects your computer. Isaac allows you to set a [b]--luadebug[/b] flag to break out of this sandbox. This is not secure, and any malicious mods could compromise your computer. Even if you've inspected the code for any and all enabled mods, Steam could still push a mod update that may end up being &quot;unsafe&quot; later on.
+
+See the [url=https://bindingofisaacrebirth.fandom.com/wiki/Launch_Options#--luadebug]wiki[/url] for more information.
+
+There are some valid reasons to enable this flag (e.g. mods that require network access / communication with 3rd-party apps), but you don't generally want to leave it on all the time. Isaac doesn't remind you if you accidentally left this flag enabled, so I created this mod.
+
+By default, it'll display [b]--luadebug is enabled[/b] at the top of the screen for a few seconds. There's a boolean at the top of the Lua file that you can change to [b]true[/b] if you want to move the text to the bottom of the screen.
+
+This works with AB+ and Repentance.</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+</metadata>
