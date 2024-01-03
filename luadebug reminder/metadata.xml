@@ -9,10 +9,12 @@ See the [url=https://bindingofisaacrebirth.fandom.com/wiki/Launch_Options#--luad
 
 There are some valid reasons to enable this flag (e.g. mods that require network access / communication with 3rd-party apps), but you don't generally want to leave it on all the time. Isaac doesn't remind you if you accidentally left this flag enabled, so I created this mod.
 
-By default, it'll display [b]--luadebug is enabled[/b] at the top of the screen for a few seconds. There's a boolean at the top of the Lua file that you can change to [b]true[/b] if you want to move the text to the bottom of the screen.
+By default, it'll display [b]--luadebug is enabled[/b] at the top of the screen for a few seconds once you start a run. There's a boolean at the top of the Lua file that you can change to [b]true[/b] if you want to move the text to the bottom of the screen.
 
-This works with AB+ and Repentance.</description>
-    <version>1.1</version>
+This works with AB+ and Repentance.
+
+If you have REPENTOGON then the text will display on the menu too.</description>
+    <version>1.2</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
 </metadata>

@@ -21,16 +21,24 @@ end
 -- 60 fps
 function mod:onRender()
   if mod.counter < mod.counterMax then
-    local ss = mod:getScreenSize()
-    local x = (ss.X / 2) - (mod.font:GetStringWidthUTF8(mod.text) / 2)
-    local y = mod.renderAtBottom and ss.Y - mod.font:GetLineHeight() - mod.yOffset or mod.yOffset
-    mod.kcolor.Alpha = (mod.counterMax - mod.counter) / mod.counterMax
-    mod.font:DrawStringUTF8(mod.text, x, y, mod.kcolor, 0, true)
+    mod:renderText()
     
     if not game:IsPaused() then
       mod.counter = mod.counter + 1
     end
   end
+end
+
+function mod:onMainMenuRender()
+  mod:renderText()
+end
+
+function mod:renderText()
+  local ss = mod:getScreenSize()
+  local x = (ss.X / 2) - (mod.font:GetStringWidthUTF8(mod.text) / 2)
+  local y = mod.renderAtBottom and ss.Y - mod.font:GetLineHeight() - mod.yOffset or mod.yOffset
+  mod.kcolor.Alpha = (mod.counterMax - mod.counter) / mod.counterMax
+  mod.font:DrawStringUTF8(mod.text, x, y, mod.kcolor, 0, true)
 end
 
 function mod:isLuadebugEnabled()
@@ -60,4 +68,8 @@ end
 if mod:isLuadebugEnabled() then
   mod:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, mod.onGameExit)
   mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.onRender)
+  
+  if REPENTOGON then
+    mod:AddCallback(ModCallbacks.MC_MAIN_MENU_RENDER, mod.onMainMenuRender)
+  end
 end
