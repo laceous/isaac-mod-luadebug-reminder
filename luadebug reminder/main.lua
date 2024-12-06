@@ -42,7 +42,7 @@ function mod:renderText()
 end
 
 function mod:isLuadebugEnabled()
-  if REPENTANCE then
+  if REPENTANCE or REPENTANCE_PLUS then
     return _LUADEBUG
   end
   
@@ -51,7 +51,7 @@ function mod:isLuadebugEnabled()
 end
 
 function mod:getScreenSize()
-  if REPENTANCE then
+  if REPENTANCE or REPENTANCE_PLUS then
     return Vector(Isaac.GetScreenWidth(), Isaac.GetScreenHeight())
   end
   
